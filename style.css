@@ -208,3 +208,47 @@ figcaption {
         grid-template-columns: 1fr;
     }
 }
+
+/* TACTICS PAGE */
+.tactics-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.tactics-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #0b6623;
+}
+
+.tactics-box {
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 25px 0;
+    border-left: 6px solid #0b6623;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.tactics-box h3 {
+    margin-top: 0;
+    color: #0b6623;
+}
+
+.tactics-box p {
+    line-height: 1.6;
+    font-size: 17px;
+}
+
+/* Formation list styling */
+.formation-list strong {
+    color: #0b6623;
+}
+
+/* Optional subtle hover effect */
+.tactics-box:hover {
+    transform: translateY(-3px);
+    transition: 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
