@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Contact</title>
     <link rel="stylesheet" href="style.css">
-    <title>Home</title>
 </head>
 <body>
 
@@ -27,77 +26,65 @@
         </ul>
     </nav>
 
-    <main class="home-container">
+    <main>
+        <h2>Get in Touch</h2>
+        <p style="text-align:center;">Have a question or want to reach out? Fill in the form below.</p>
 
-        <!-- HERO SECTION -->
-        <section class="hero">
-            <h1>Welcome to the Soccer Hub</h1>
-            <p>Your guide to the world’s greatest sport.</p>
-        </section>
+        <div class="contact-container">
 
-        <!-- INTRO SECTION -->
-        <section class="intro">
-            <h2>About This Website</h2>
-            <p>
-                This website focuses on the sport of soccer, providing clear information about the game,
-                players, major stadiums, memorable moments, and famous tactics used by managers.
-            </p>
-        </section>
+            <form class="contact-form" id="contactForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
 
-        <!-- CONTENT GRID -->
-        <section class="content-grid">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
 
-            <a href="about.html" class="content-card">
-                <h3>History</h3>
-                <p>Explore how the beautiful game began.</p>
-            </a>
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
 
-            <a href="players.html" class="content-card">
-                <h3>Famous Players</h3>
-                <p>Meet the legends who shaped football.</p>
-            </a>
+                <button type="submit">Send Message</button>
+            </form>
 
-            <a href="stadiums.html" class="content-card">
-                <h3>Stadiums</h3>
-                <p>Discover the world’s most iconic arenas.</p>
-            </a>
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <p><strong>Email:</strong> info@soccerfanatics.com</p>
+                <p><strong>Phone:</strong> +123 456 7890</p>
+                <p><strong>Location:</strong> Dublin, Ireland</p>
+            </div>
 
-            <a href="moments.html" class="content-card">
-                <h3>Top Moments</h3>
-                <p>Relive football’s greatest memories.</p>
-            </a>
+        </div>
 
-            <a href="tactics.html" class="content-card">
-                <h3>Tactics</h3>
-                <p>Learn how teams outsmart their opponents.</p>
-            </a>
-
-            <a href="contacts.html" class="content-card">
-                <h3>Contact Us</h3>
-                <p>Get in touch with the creator.</p>
-            </a>
-
-        </section>
+        <!-- DISPLAY MESSAGE HERE -->
+        <div id="submittedMessage" class="submitted-box" style="display:none;">
+            <h3>Your Message</h3>
+            <p><strong>Name:</strong> <span id="outName"></span></p>
+            <p><strong>Email:</strong> <span id="outEmail"></span></p>
+            <p><strong>Message:</strong></p>
+            <p id="outMessage"></p>
+        </div>
 
     </main>
 
     <footer>
         <p>&copy; 2026 Soccer Website. All rights reserved.</p>
-
-        <p>
-            <a href="https://github.com/adi886/WD-Project" target="_blank">
-                Visit my GitHub
-            </a>
-        </p>
-
-        <p>
-            <a href="https://jigsaw.w3.org/css-validator/check/referer">
-                <img style="border:0;width:88px;height:31px" 
-                     src="https://jigsaw.w3.org/css-validator/images/vcss-blue" 
-                     alt="Valid CSS!">
-            </a>
-        </p>
     </footer>
+
+    <script>
+        const form = document.getElementById("contactForm");
+        const box = document.getElementById("submittedMessage");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            document.getElementById("outName").textContent = document.getElementById("name").value;
+            document.getElementById("outEmail").textContent = document.getElementById("email").value;
+            document.getElementById("outMessage").textContent = document.getElementById("message").value;
+
+            box.style.display = "block";
+
+            form.reset();
+        });
+    </script>
 
 </body>
 </html>
